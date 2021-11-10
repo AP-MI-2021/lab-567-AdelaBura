@@ -1,29 +1,28 @@
-from copy import deepcopy
-
 from Domain.obiect import creeaza_obiectul, get_id, set_nume, set_descriere, set_pret_achizitie, set_locatie
 
-
-def edit_obiect(obiecte, id, nume_nou, descriere_noua, pret_achizitie_nou, locatie_noua):
+def edit_obiect(obiecte, obiect_nou):
     '''
     Editarea obiectelor cu idul id si aruncarea unei erori ValueError in cazul in care fieldurile nu sunt corecte
     :param obiecte: 
-    :param id: 
-    :param nume_nou: 
-    :param descriere_noua: 
-    :param pret_achizitie_nou: 
-    :param locatie_noua: 
+    :param obiect_nou:
     :return: 
     '''
-    updated_list = deepcopy(obiecte)
-    for obiect in updated_list:
-        if get_id(obiect) == id:
-            set_nume(obiect, nume_nou)
-            set_descriere(obiect, descriere_noua)
-            set_pret_achizitie(obiect, pret_achizitie_nou)
-            set_locatie(obiect, locatie_noua)
-    return updated_list
+    lista_noua = []
+    for obiect in obiecte:
+        if get_id(obiect) == get_id(obiect_nou):
+            lista_noua.append(obiect_nou)
+        else:
+            lista_noua.append(obiect)
+    return lista_noua
 
-def find_obiect(obiecte, id):
+def delete_obiect(obiecte, id_obj):
+    lista_noua = []
+    for obiect in obiecte:
+        if get_id(obiect) != id_obj:
+            lista_noua.append(obiect)
+    return lista_noua
+
+def find_obiect(obiecte, id_obj):
     '''
     Gaseste obiecyul in obicte cu id
     :param obiecte:
@@ -31,7 +30,7 @@ def find_obiect(obiecte, id):
     :return:
     '''
     for obiect in obiecte:
-        if get_id(obiect) == id:
+        if get_id(obiect) == id_obj:
             return obiect
     return None
 
@@ -47,4 +46,4 @@ def add_obiect(obiecte, id_obiect, nume, descriere, pret_achizitie, locatie):
     :return:
     '''
     obiect = creeaza_obiectul(id_obiect, nume, descriere, pret_achizitie, locatie)
-    obiecte.append(obiect)
+    return obiecte + [obiect]

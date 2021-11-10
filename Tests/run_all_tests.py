@@ -1,7 +1,9 @@
-from Tests.test_crud import test_add_obiect, test_edit_obiect
+from Tests.test_crud import test_add_obiect, test_edit_obiect, test_find_obiect, test_delete_obiect
 
 
 def run_all_tests():
      test_add_obiect()
      test_edit_obiect()
+     test_find_obiect()
+     test_delete_obiect()
 

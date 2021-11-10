@@ -1,13 +1,14 @@
-from Domain.obiect import get_str
-from Logic.crud import add_obiect
+from Domain.obiect import creeaza_obiectul, get_str
+from Logic.crud import add_obiect, delete_obiect, edit_obiect
+from Logic.operatii import get_all_locations, get_max_price, muta_obiect
 
 
 def print_meniu():
     print('''
     Meniu
     1.CRUD
-    2.Operatiuni
-    3.Undo/Redo
+    2.Muta locatia tuturor obiectelor din locatia initiala
+    3.Determinarea celui mai mare preț pentru fiecare locație.
     x.Iesire
     ''')
 
@@ -27,13 +28,22 @@ def handle_add_obiect_ui(obiecte):
     :param obiecte: lista de obiecte
     :return:
     '''
-    id = input('Dati id-ul obiectului: ')
+    id = int(input('Dati id-ul obiectului: '))
     nume = input('Dati numele obiectului: ')
     descriere = input('Dati descrierea obiectului: ')
     pret = float(input('Dati pretul obiectului: '))
     locatie = input('Dati locatia (formata din patru caractere) obiectului: ')
-    add_obiect(obiecte, id, nume, descriere, pret, locatie)
+    obiecte = add_obiect(obiecte, id, nume, descriere, pret, locatie)
+    return obiecte
     print('Obiectul a fost adaugat cu succes!')
+
+def handle_update_obiecte(obiecte):
+    id = int(input('Dati id-ul obiectului: '))
+    nume = input('Dati numele obiectului: ')
+    descriere = input('Dati descrierea obiectului: ')
+    pret = float(input('Dati pretul obiectului: '))
+    locatie = input('Dati locatia (formata din patru caractere) obiectului: ')
+    return edit_obiect(obiecte,creeaza_obiectul(id, nume, descriere, pret, locatie))
 
 def handle_show_all(obiecte):
     '''
@@ -44,6 +54,22 @@ def handle_show_all(obiecte):
     for obiect in obiecte:
         print(get_str(obiect))
 
+def handle_delete_obiect(obiecte):
+    id_obiect = int(input('Dati id-ul obiectului pe care doriti sa il stergeti: '))
+    return delete_obiect(obiecte, id_obiect)
+
+def handle_move_location(obiecte):
+    locatie_initiala = input('Dati locatia initiala: ')
+    locatie_noua = input('Dati locatia in care vreti sa mutati obiectele: ')
+    obiecte = muta_obiect(obiecte, locatie_initiala, locatie_noua)
+    return obiecte
+
+def handle_highest_price(obiecte):
+    lista_locatii = get_all_locations(obiecte)
+    for locatie in lista_locatii:
+        pret_maxim = get_max_price(obiecte, locatie)
+        print(f'Pretul maxim pentru locatia {locatie} este {pret_maxim}.')
+    
 def run_crud_ui(obiecte):
     '''
 
@@ -54,19 +80,19 @@ def run_crud_ui(obiecte):
         print_crud_meniu()
         cmd = input("Comanda: ")
         if cmd == '1':
-            handle_add_obiect_ui(obiecte)
+            obiecte = handle_add_obiect_ui(obiecte)
+        elif cmd == '2':
+            obiecte = handle_update_obiecte(obiecte)
+            print('Obiectul a fost modificat cu succes!')
+        elif cmd == '3':
+            obiecte = handle_delete_obiect(obiecte)
         elif cmd == '4':
             handle_show_all(obiecte)
         elif cmd == 'x':
             break
         else:
             print('Comanda invalida!')
-
-def run_operatiuni_ui(obiecte):
-    pass
-
-def run_undo_redo_ui(obiecte):
-    pass
+    return obiecte
 
 def run_console(obiecte):
     '''
@@ -74,15 +100,17 @@ def run_console(obiecte):
     :param obiecte: lista de obiecte
     :return:
     '''
+
+
     while True:
         print_meniu()
         cmd = input("Comanda: ")
         if cmd == '1':
-            run_crud_ui(obiecte)
+            obiecte = run_crud_ui(obiecte)
         if cmd == '2':
-            run_operatiuni_ui(obiecte)
+            obiecte = handle_move_location(obiecte)
         if cmd == '3':
-            run_undo_redo_ui(obiecte)
+            handle_highest_price(obiecte)
         elif cmd == 'x':
             break
         else:
