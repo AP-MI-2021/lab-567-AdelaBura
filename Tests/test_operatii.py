@@ -4,9 +4,9 @@ from Logic.operatii import muta_obiect
 
 def get_data():
     return[
-    creeaza_obiectul(13, 'a', 'ght', 56.9, 'l1'),
-    creeaza_obiectul(83, 'hju', 'ght', 56.9, 'l1'),
-    creeaza_obiectul(63, 'dh', 'ght', 56.9, '98v5')
+    creeaza_obiectul(11, 'dulap', 'mic', 56.9, 'Arad'),
+    creeaza_obiectul(12, 'penar', 'colorat', 13, 'Iasi'),
+    creeaza_obiectul(13, 'covor', 'plusat', 103.5, 'Cluj')
     ]
 
 def test_muta_obiect():

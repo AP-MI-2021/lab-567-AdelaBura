@@ -24,7 +24,7 @@ def print_crud_meniu():
 
 def handle_add_obiect_ui(obiecte):
     '''
-    Adauga un obiect citit de la tastatura in lista de prajituri
+    Adauga un obiect citit de la tastatura in lista de obiecte
     :param obiecte: lista de obiecte
     :return:
     '''
@@ -38,6 +38,11 @@ def handle_add_obiect_ui(obiecte):
     print('Obiectul a fost adaugat cu succes!')
 
 def handle_update_obiecte(obiecte):
+    '''
+    Modifica un obiect identificat din lista de obiecte
+    :param obiecte:
+    :return:
+    '''
     id = int(input('Dati id-ul obiectului: '))
     nume = input('Dati numele obiectului: ')
     descriere = input('Dati descrierea obiectului: ')
@@ -55,6 +60,11 @@ def handle_show_all(obiecte):
         print(get_str(obiect))
 
 def handle_delete_obiect(obiecte):
+    '''
+    Sterge un obiect din lista de obiecte
+    :param obiecte:
+    :return:
+    '''
     id_obiect = int(input('Dati id-ul obiectului pe care doriti sa il stergeti: '))
     return delete_obiect(obiecte, id_obiect)
 
@@ -72,7 +82,6 @@ def handle_highest_price(obiecte):
     
 def run_crud_ui(obiecte):
     '''
-
     :param obiecte: lista de obiecte
     :return:
     '''
@@ -96,11 +105,9 @@ def run_crud_ui(obiecte):
 
 def run_console(obiecte):
     '''
-
     :param obiecte: lista de obiecte
     :return:
     '''
-
 
     while True:
         print_meniu()
