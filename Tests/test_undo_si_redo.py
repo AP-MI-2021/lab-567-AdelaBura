@@ -5,12 +5,12 @@ from Logic.undo_si_redo import undo, redo, list_versions
 
 def get_data():
     return [
-        get_new_object(1, 'birou', 'desc 1', 450, 'l111'),
-        get_new_object(2, 'scaun', 'desc 2', 100, 'l111'),
-        get_new_object(3, 'masa', 'desc 3', 330, 'l121'),
-        get_new_object(4, 'frigider', 'desc 4', 2900, 'l112'),
-        get_new_object(5, 'cafetiera', 'desc 5', 470, 'l112'),
-        get_new_object(6, 'imprimanta', 'desc 6', 890, 'l111')
+        get_new_object(1, 'birou', 'maro', 450, 'cluj'),
+        get_new_object(2, 'scaun', 'lemn', 100, 'cluj'),
+        get_new_object(3, 'masa', 'patrata', 330, 'arad'),
+        get_new_object(4, 'frigider', 'alb', 2900, 'iasi'),
+        get_new_object(5, 'cafetiera', 'scumpa', 470, 'iasi'),
+        get_new_object(6, 'imprimanta', 'canon', 890, 'cluj')
     ]
 
 
@@ -20,15 +20,15 @@ def test_undo_redo():
     current_version = 0
     versions_list, current_version = list_versions(versions_list, current_version, lista)
 
-    obiect1 = get_new_object(1, 'birou', 'desc 1', 450, 'l111')
+    obiect1 = get_new_object(1, 'birou', 'maro', 450, 'cluj')
     lista = create(lista, obiect1)
     versions_list, current_version = list_versions(versions_list, current_version, lista)
 
-    obiect2 = get_new_object(2, 'scaun', 'desc 2', 100, 'l111')
+    obiect2 = get_new_object(2, 'scaun', 'lemn', 100, 'cluj')
     lista = create(lista, obiect2)
     versions_list, current_version = list_versions(versions_list, current_version, lista)
 
-    obiect3 = get_new_object(3, 'masa', 'desc 3', 330, 'l121')
+    obiect3 = get_new_object(3, 'masa', 'patrata', 330, 'arad')
     lista = create(lista, obiect3)
     versions_list, current_version = list_versions(versions_list, current_version, lista)
 
