@@ -5,15 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0ab7a1f-fba0-4499-93c6-3e886dcebb48" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Domain/obiect2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/concatenare.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/mutare_locatie.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/ordonare.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/pret_maxim.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/sume_pret.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/undo_si_redo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_undo_si_redo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserInterface/consola2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obiect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obiect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/run_all_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_crud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/test_operatii.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_operatii.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserInterface/consola.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/consola.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,7 +92,10 @@
       <option name="presentableId" value="Default" />
       <updated>1636553837796</updated>
       <workItem from="1636553841372" duration="95000" />
-      <workItem from="1636556732373" duration="5153000" />
+      <workItem from="1636556732373" duration="9398000" />
+      <workItem from="1637143512956" duration="80000" />
+      <workItem from="1637143747738" duration="6745000" />
+      <workItem from="1637150566337" duration="62000" />
     </task>
     <servers />
   </component>
@@ -88,8 +112,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/lab_567_AdelaBura$main.coverage" NAME="main Coverage Results" MODIFIED="1636561922536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lab_567_AdelaBura$main.coverage" NAME="main Coverage Results" MODIFIED="1636565954351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1637149393068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

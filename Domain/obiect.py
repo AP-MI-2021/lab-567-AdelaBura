@@ -1,107 +1,69 @@
-def creeaza_obiectul(id_obiect, nume, descriere, pret_achizitie, locatie):
+def get_new_object(_id: int, _nume: str, _descriere: str, _pret_achizitie: int, _locatie: str):
     '''
-    Creeaza un obiect.
-    :param id_obiect: id-ul obiectului, trebuie sa fie unic
-    :param nume: numele obiectului, nenul
-    :param descriere: descrierea obiectului, nenul
-    :param pret_achizitie: pretul achizitiei
-    :param locatie: locatia
-    :return: un obiect
+    Creeaza un obiect
+    :param _id: id-ul obiectului, trebuie sa fie unic si int
+    :param _nume: numele obiectului, nenul, string
+    :param _descriere: descrierea obiectului, string
+    :param _pret_achizitie: pretul achizitiei, int
+    :param _locatie: locatia obiectului, string de patru caractere
+    :return: obiectul
     '''
-    return [id_obiect, nume, descriere, pret_achizitie, locatie]
+    #return [id_obiect, nume, descriere, pret_achizitie, locatie]
+    obiect = {
+        'id': _id,
+        'nume': _nume,
+        'descriere': _descriere,
+        'pret_achizitie': _pret_achizitie,
+        'locatie': _locatie.zfill(4)
+    }
+    return obiect
 
-  # return {
-  #      "id_obiect": id_obiect,
-  #      "nume": nume,
-  #     "descriere": descriere,
-  #      "pret_achizitie": pret_achizitie,
-  #     "locatie": locatie
-  #  }
 
 def get_id(obiect):
     '''
     Getter pentru Id-ul obiectului
-    :param obiect: Dict
-    :return: id - string
-    '''
-    return obiect[0]
-    #return obiect['id_obiect']
-
-def set_id(obiect, id):
-    '''
-    Setter pentru Id-ul obiectului
     :param obiect:
-    :return:
+    :return: id - int
     '''
-    obiect['id'] = id
+    return obiect['id']
+
 
 def get_nume(obiect):
     '''
     Getter pentru numele obiectului
-    :param obiect: Dict
+    :param obiect:
     :return: nume - string
     '''
-    return obiect[1]
-    #return obiect['nume']
+    return obiect['nume']
 
-def set_nume(obiect, nume):
-    '''
-    Setter pentru numele obiectului
-    :param obiect:
-    :return:
-    '''
-    obiect['nume'] = nume
 
 def get_descriere(obiect):
     '''
     Getter pentru descrierea obiectului
-    :param obiect: Dict
+    :param obiect:
     :return: descriere - string
     '''
-    return obiect[2]
-    #return obiect['descriere']
+    return obiect['descriere']
 
-def set_descriere(obiect, descriere):
-    '''
-    Setter pentru descrierea obiectului
-    :param obiect:
-    :return:
-    '''
-    obiect['descriere'] = descriere
 
 def get_pret_achizitie(obiect):
     '''
     Getter pentru pretul achizitiei
-    :param obiect: Dict
-    :return: pret - float
-    '''
-    return obiect[3]
-    #return obiect['pret_achizitie']
-
-def set_pret_achizitie(obiect, pret_achizitie):
-    '''
-    Setter pentru pretul achizitiei
     :param obiect:
-    :return:
+    :return: pret
     '''
-    obiect['pret_achizitie'] = pret_achizitie
+    return obiect['pret_achizite']
+
 
 def get_locatie(obiect):
     '''
     Getter pentru locatie
-    :param obiect: Dict
+    :param obiect:
     :return: locatie
     '''
-    return obiect[4]
-    #return obiect['locatie']
+    return obiect['locatie']
 
-def set_locatie(obiect, locatie):
-    '''
-    Setter pentru locatie
-    :param obiect:
-    :return:
-    '''
-    obiect['locatie'] = locatie
 
-def  get_str(obiect):
-    return f'Obiect cu id-ul {get_id(obiect)}, cu numele {get_nume(obiect)}, la pretul de {get_pret_achizitie(obiect)}, descriere: {get_descriere(obiect)}, si localizat: {get_locatie(obiect)}'
+def get_object_string(obiect):
+    return f'Obiect cu ID-ul {get_id(obiect)}, cu numele {get_nume(obiect)}, decrierea {get_descriere(obiect)}, ' \
+           f'pretul achizitiei {get_pret_achizitie(obiect)} si locatia {get_locatie(obiect)}'
