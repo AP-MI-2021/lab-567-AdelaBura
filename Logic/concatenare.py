@@ -2,23 +2,22 @@ from Domain.obiect2 import get_pret_achizitie, get_id, get_nume, get_descriere, 
 
 
 def concatenare_string(element1: str, element2: str):
-    """
-    Comcateneaza doua stringuri
+    '''
+    Concateneaza doua stringuri
     :param element1: string 1
-    :param element2: strung 2
-    :return: concatenarea element1 si element2
-    """
+    :param element2: string 2
+    :return: concatenarea elem1 si elem2
+    '''
     return element1 + element2
 
-
 def concatenare(lista, string_citit, pret):
-    """
-    Concateneaza un string citit la descrierea obiectelor din lista care au un pret mai mare decat unul dat
+    '''
+    Concateneaza un string citit la descrierea obiectelor din lista care au un pret mai mare decat o valoare citita
     :param lista: lista de obiecte
     :param string_citit: stringul de concatenat la descriere
     :param pret: pretul dat
-    :return: noua lista in care elementele cu un pret mai mare decat pret au concatenat la descriere string_citit
-    """
+    :return: o noua lista in care elementele cu un pret mai mare decat valoarea data au concatenat la descriere stringul citit
+    '''
     if type(pret) is not int:
         raise ValueError('Dati id-ul un numar intreg!')
     rezultat = []

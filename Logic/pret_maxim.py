@@ -2,11 +2,11 @@ from Domain.obiect2 import get_locatie, get_pret_achizitie
 
 
 def location_list(lista: list):
-    """
-    Formeaza o lista ce contine doar locatiile diferite ale obiectelor dintr-o lista
+    '''
+    Genereaza o lista ce contine doar locatiile diferite ale obiectelor dintr-o lista
     :param lista: lista
     :return: lista de locatii
-    """
+    '''
     rezultat_final = []
     for element in lista:
         if get_locatie(element) not in rezultat_final:
@@ -15,11 +15,11 @@ def location_list(lista: list):
 
 
 def pret_maxim_locatie(lista: list):
-    """
-    Creeaza o lista formata din preturile maxime ale locatiilor din lista
+    '''
+    Genereaza o lista care cuprinde preturile maxime ale locatiilor din lista
     :param lista: lista
     :return: lista de preturi maxime ale locatiilor
-    """
+    '''
     lista_pret_max = []
     locatii = location_list(lista)
     for locatie in locatii:

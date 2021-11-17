@@ -7,7 +7,6 @@ from Tests.test_operatii import test_ordonare
 from Tests.test_undo_si_redo import test_undo_redo
 from Tests.test_operatii import test_sume_pret
 from UserInterface.consola import header
-from UserInterface.consola2 import header2
 
 
 def main():
@@ -29,13 +28,7 @@ def main2():
     lista = create(lista, obiect5)
     obiect6 = get_new_object(6, 'imprimanta', 'desc 6', 890, 'l111')
     lista = create(lista, obiect6)
-    lista = header2(lista)
 
-
-def obtiuni():
-    print('Alege cum vrei sa dai comenzile: ')
-    print('1 - daca vrei sa dai pe rand comenzile')
-    print('2 - daca vrei sa dai toate comenzile o data(neactualizata cu ultimele cerinte)')
 
 
 if __name__ == '__main__':
@@ -45,12 +38,4 @@ if __name__ == '__main__':
     test_pret_max_per_location()
     test_sume_pret()
     test_undo_redo()
-    obtiuni()
-    obtiune = input('Alege cum vrei sa dai comenzile: ')
-
-    if obtiune == '2':
-        main2()
-    elif obtiune == '1':
-        main()
-    else:
-        print('Poti alege doar 1 sau 2!')
+    main()

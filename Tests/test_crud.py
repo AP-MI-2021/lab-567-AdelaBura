@@ -4,29 +4,29 @@ from Logic.crud import create, read, update, delete
 
 def get_data():
     return [
-        get_new_object(1, 'birou', 'desc 1', 450, 'l111'),
-        get_new_object(2, 'scaun', 'desc 2', 100, 'l111'),
-        get_new_object(3, 'masa', 'desc 3', 330, 'l121'),
-        get_new_object(4, 'frigider', 'desc 4', 2900, 'l112'),
-        get_new_object(5, 'cafetiera', 'desc 5', 470, 'l112'),
-        get_new_object(6, 'imprimanta', 'desc 6', 890, 'l111')
+        get_new_object(1, 'birou', 'alb', 200, 'cluj'),
+        get_new_object(2, 'masa', 'rotunda', 367, 'cluj'),
+        get_new_object(3, 'dulap', 'maro', 330, 'iasi'),
+        get_new_object(4, 'canapea', 'living', 2450, 'iasi'),
+        get_new_object(5, 'uscator', 'portabil', 78, 'arad'),
+        get_new_object(6, 'imprimanta', 'canon', 600, 'cluj')
     ]
 
 
 def test_create():
     lista = get_data()
-    new_object = get_new_object(7, 'dulap', 'desc 7', 90, 'l111')
+    new_object = get_new_object(7, 'telefon', 'iphone', 2500, 'cluj')
     new_list = create(lista, new_object)
     assert len(lista) + 1 == len(new_list)
     assert new_object in new_list
-    new_object2 = get_new_object(7, 'dulap7', 'desc 77', 90, 'l111')
+    new_object2 = get_new_object(7, 'telefon', 'samsung', 2500, 'cluj')
     try:
         _ = create(new_list, new_object2)
         assert False
     except ValueError:
         assert True
     try:
-        new_object3 = get_new_object(7, 'dulap7', 'desc 77', 90, 'l11')
+        new_object3 = get_new_object(7, 'dulap7', 'samsung', 2500, 'clu')
         _ = create(new_list, new_object3)
         assert False
     except ValueError:
@@ -47,12 +47,12 @@ def test_read():
 
 def test_update():
     lista = get_data()
-    new_object = get_new_object(3, 'masa lemn', 'desc 3', 400, 'l121')
+    new_object = get_new_object(3, 'dulap lemn', 'maro', 400, 'arad')
     update_list = update(lista, new_object)
     assert len(lista) == len(update_list)
     assert new_object in update_list
     assert update_list[2] != lista[2]
-    new_object2 = get_new_object(12, 'masa lemn', 'desc 3', 400, 'l121')
+    new_object2 = get_new_object(12, 'dulap lemn', 'maro', 400, 'arad')
     try:
         _ = update(update_list, new_object2)
         assert False

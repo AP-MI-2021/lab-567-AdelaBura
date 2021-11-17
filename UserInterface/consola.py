@@ -26,15 +26,6 @@ def handle_redo(versions_list, current_version):
     return current_version
 
 
-def crudmenu():
-    print('1.Adaugarea unui obiect in lista')
-    print('2.Afisarea unui obiect cu id-ul dat de la tastatura')
-    print('3.Modificarea unui obiect din lista, care are acelasi id cu un nou obiect dat de la tastatura')
-    print('4.Stergerea unui obiect cu id-ul dat de la tastatura')
-    print('a.Afisarea listei de obiecte')
-    print('x.Iesire din crud')
-
-
 def handle_add(lista):
     try:
         id1 = int(input('Dati id-ul obiectului de adaugat in sir: '))
@@ -54,7 +45,7 @@ def handle_read(lista):
     try:
         read_id = int(input('Dati id-ul obiectului pe care doriti sa il vedeti: '))
         if read(lista, read_id) is None:
-            return 'Id-ul citit nu corespunde vreunui element din lista!'
+            return 'Id-ul citit nu corespunde nici unui element din lista!'
         else:
             return read(lista, read_id)
     except ValueError as ve:
@@ -89,19 +80,6 @@ def handle_delete(lista):
     except TypeError as te:
         print('Eroare:', te)
     return lista
-
-
-def showmenu():
-    print('1.Crud')
-    print('2.Mutarea unor obiecte dintr-o locatie in alta.')
-    print('3.Concatenarea unui string citit la toate descrierile obiectelor cu prețul mai mare decât o valoare citită.')
-    print('4.Determinarea celui mai mare pret pentru fiecare locatie.')
-    print('5.Ordonarea obiectelor crescător după prețul de achiziție.')
-    print('6.Afișarea sumelor prețurilor pentru fiecare locație.')
-    print('7.Undo.')
-    print('8.Redo.')
-    print('a.Afisarea listei.')
-    print('x.Iesire')
 
 
 def handle_change_location(lista):
@@ -153,24 +131,50 @@ def handle_sume_preturi(lista):
     return lista
 
 
+def crudmenu():
+    print('''
+    1.Adaugarea unui obiect in lista.
+    2.Afisarea unui obiect cu id-ul dat de la tastatura.
+    3.Modificarea unui obiect din lista, care are acelasi id cu un nou obiect dat de la tastatura.
+    4.Stergerea unui obiect cu id-ul dat de la tastatura.
+    5.Afisarea listei de obiecte.
+    x.Iesire din crud.
+    ''')
+
+
+def showmenu():
+    print('''
+    MENIU
+    1.Crud
+    2.Mutarea unor obiecte dintr-o locatie in alta.
+    3.Concatenarea unui string citit la toate descrierile obiectelor cu prețul mai mare decât o valoare citită.
+    4.Determinarea celui mai mare pret pentru fiecare locatie.
+    5.Ordonarea obiectelor crescător după prețul de achiziție.
+    6.Afișarea sumelor prețurilor pentru fiecare locație.
+    7.Undo.
+    8.Redo.
+    9.Afisarea listei.
+    x.Iesire
+    ''')
+
 def header_crud(lista, versions_list, current_version):
     while True:
         crudmenu()
-        obtiune = input('Dati obtiunea: ')
-        if obtiune == '1':
+        cmd = input('Dati optiunea: ')
+        if cmd == '1':
             lista = handle_add(lista)
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == '2':
+        elif cmd == '2':
             print(handle_read(lista))
-        elif obtiune == '3':
+        elif cmd == '3':
             lista = handle_update(lista)
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == '4':
+        elif cmd == '4':
             lista = handle_delete(lista)
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == 'a':
+        elif cmd == '5':
             print(lista)
-        elif obtiune == 'x':
+        elif cmd == 'x':
             break
         else:
             print('Obtiune invalida. Incercati altceva!')
@@ -179,42 +183,42 @@ def header_crud(lista, versions_list, current_version):
 
 def header(lista):
     versions_list = [lista]
-    current_version = 1
+    current_version = 0
     while True:
         showmenu()
-        obtiune = input('Alegeti obtiunea: ')
-        if obtiune == '1':
+        cmd = input('Alegeti obtiunea: ')
+        if cmd == '1':
             lista, versions_list, current_version = header_crud(lista, versions_list, current_version)
-        elif obtiune == '2':
+        elif cmd == '2':
             lista = handle_change_location(lista)
             print('Locatiile au fost schimbate cu succes!')
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == '3':
+        elif cmd == '3':
             lista = handle_concatenare(lista)
             print('Lista a fost modificata cu succes!')
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == '4':
+        elif cmd == '4':
             handle_pret_max_locatii(lista)
             print('Cerinta a fost indeplinita cu succes!')
-        elif obtiune == '5':
+        elif cmd == '5':
             lista = handle_ordonare(lista)
             print('Lista a fost ordonata cu succes!')
             versions_list, current_version = list_versions(versions_list, current_version, lista)
-        elif obtiune == '6':
+        elif cmd == '6':
             handle_sume_preturi(lista)
             print('Cerinta a fost indeplinita cu succes!')
-        elif obtiune == '7':
+        elif cmd == '7':
             current_version = handle_undo(current_version)
             lista = versions_list[current_version - 1]
             print('Undo efectuat cu succes!')
-        elif obtiune == '8':
+        elif cmd == '8':
             current_version = handle_redo(versions_list, current_version)
             lista = versions_list[current_version - 1]
             print('Redo efectuat cu succes!')
-        elif obtiune == 'a':
+        elif cmd == '9':
             print(lista)
-        elif obtiune == 'x':
+        elif cmd == 'x':
             break
         else:
-            print('Obtiune invalida! Incearca altceva!')
+            print('Optiune invalida!')
     return lista

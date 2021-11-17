@@ -58,29 +58,19 @@ def handle_delete(lista, lista_date):
 
 
 def showmenu():
-    print('1.Adaugarea unui obiect in lista')
-    print('2.Afisarea unui obiect cu id-ul dat de la tastatura')
-    print('3.Modificarea unui obiect din lista, care are acelasi id cu un nou obiect dat de la tastatura')
-    print('4.Stergerea unui obiect cu id-ul dat de la tastatura')
-    print('5.Mutarea unor obiecte dintr-o locatie in alta')
-    print('6.Concatenarea unui string citit la toate descrierile obiectelor cu prețul mai mare decât o valoare citită.')
-    print('a.Afisarea listei de obiecte')
-    print('x.Iesire')
-
-
-def help():
-    print('Cum poti accesa o comanda: ')
-    print('1. - exemplu : 1,id(int),nume(str),descriere(str),pret_achizitie(int),locatie(str)')
-    print('2. - exemplu : 2,id(int)')
-    print('3. - exemplu : 3,id(int),nume(str),descriere(str),pret_achizitie(int),locatie(str)')
-    print('4. - exemplu : 4,id(int)')
-    print('5. - exemplu : 5,sursa(str-locatia de unde vrem sa mutam),destinatie(str-locatia unde vrem sa mutam)')
-    print('6. - exemplu : 6,string(str- stringul pe care dorim sa il adaugam),pret(int-pretul cu care vom compara)')
-    print('a. - exemplu : a')
-    print('x. - exemplu : x')
-    print('Dati comenzile urmate de datele aferente dupa modelul de mai sus separate prin ";"!')
-    print('Exemplu: 2,3;a;4,1')
-
+    print('''
+        MENIU
+        1.Crud
+        2.Mutarea unor obiecte dintr-o locatie in alta.
+        3.Concatenarea unui string citit la toate descrierile obiectelor cu prețul mai mare decât o valoare citită.
+        4.Determinarea celui mai mare pret pentru fiecare locatie.
+        5.Ordonarea obiectelor crescător după prețul de achiziție.
+        6.Afișarea sumelor prețurilor pentru fiecare locație.
+        7.Undo.
+        8.Redo.
+        9.Afisarea listei.
+        x.Iesire
+        ''')
 
 def handle_change_location(lista, lista_date):
     try:
@@ -102,34 +92,4 @@ def handle_concatenare(lista, lista_date):
     return lista
 
 
-def header2(lista):
-    while True:
-        showmenu()
-        help()
-        obtiuni = input('Dati sirul de obtiuni si date: ')
-        lista_obtiune = obtiuni.split(sep=';')
-        for element in lista_obtiune:
-            lista_date = element.split(sep=',')
-            obtiune = lista_date[0]
-            if obtiune == '1':
-                lista = handle_add(lista, lista_date)
-            elif obtiune == '2':
-                print(handle_read(lista, lista_date))
-            elif obtiune == '3':
-                lista = handle_update(lista, lista_date)
-            elif obtiune == '4':
-                lista = handle_delete(lista, lista_date)
-            elif obtiune == '5':
-                lista = handle_change_location(lista, lista_date)
-            elif obtiune == '6':
-                lista = handle_concatenare(lista, lista_date)
-            elif obtiune == 'a':
-                print(lista)
-            elif obtiune == 'x':
-                quit
-            else:
-                print('Obtiune invalida! Incearca altceva!')
-        break
-
-    return lista
 

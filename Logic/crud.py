@@ -2,13 +2,12 @@ from Domain.obiect2 import get_id, get_locatie, get_pret_achizitie
 
 
 def create(lista_obiecte: list, obiect: list):
-    """
-    Adauga in lista un nou obiect
-    :param lista_obiecte: lista existenta
-    :param obiect: obiectul de adaugat
-    :return: - lista_obiecte in care a adaugat obiectul obiect
-             - eroarea si motivul ei
-    """
+    '''
+    Creeaza un obiect
+    :param lista_obiecte: lista
+    :param obiect: obiectul creat
+    :return: o lista cu obiecte in care a fost adaugat obiectul creat + eroarea si motivul ei
+    '''
     if type(get_id(obiect)) is not int:
         raise ValueError('ID-ul trebuie sa fie un numar intreg!')
     if len(get_locatie(obiect)) != 4:
@@ -22,14 +21,13 @@ def create(lista_obiecte: list, obiect: list):
 
 
 def read(lista_obiecte: list, id_obiect: int = None):
-    """
-    Verifica daca un obiect dat printr-un id este in lista, si il transmite
+    '''
+    Verifica daca un obiect dat printr introducerea unui id este in lista
     :param lista_obiecte: lista de obiecte
     :param id_obiect: id-ul obiectului cautat
-    :return: - obiect_gasit - obiectul cu id_obiect din lista, daca acesta exista
-             - lista intreaga daca id_obiect nu are data o valoare
-             - eroarea si tipul ei - daca nu exista niciun obiect cu id_obiect in lista
-    """
+    :return: obiectul cu id_obiect din lista, daca acesta exista sau lista intreaga daca id_obiect nu are data o valoare
+             + eroarea si tipul ei daca e cazul
+    '''
     if id_obiect is None:
         return lista_obiecte
     obiect_gasit = None
@@ -42,12 +40,12 @@ def read(lista_obiecte: list, id_obiect: int = None):
 
 
 def update(lista_obiecte, new_object):
-    """
+    '''
     Modifica un obiect din lista
     :param lista_obiecte: lista de obiecte
     :param new_object: obiectul pe care dorim sa il modificam
-    :return: lista cu obiectul actualizat
-    """
+    :return: lista cu obiectul modificat
+    '''
     gasit = False
     for element in lista_obiecte:
         if get_id(element) == get_id(new_object):
@@ -64,12 +62,12 @@ def update(lista_obiecte, new_object):
 
 
 def delete(lista_obiecte, id_obiect):
-    """
-    Sterge obiectul cu un id dat din lista
+    '''
+    Sterge din lista obiectul cu un id dat
     :param lista_obiecte: lista de obiecte
     :param id_obiect: id-ul obiectului pe care vrem sa il stergem
     :return: lista fara obiectul cu id-ul id_obiect
-    """
+    '''
     if type(id_obiect) is not int:
         raise TypeError('Dati id-ul un numar intreg!')
     gasit = True

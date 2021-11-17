@@ -1,4 +1,5 @@
 def get_new_object(_id: int, _nume: str, _descriere: str, _pret_achizitie: int, _locatie: str):
+    #validari pentru id, locatie si preturi
     if type(_id) is not int:
         raise ValueError('ID-ul trebuie sa fie un numar intreg!')
     if type(_pret_achizitie) is not int:
