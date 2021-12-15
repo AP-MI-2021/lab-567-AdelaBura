@@ -6,19 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0ab7a1f-fba0-4499-93c6-3e886dcebb48" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obiect2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obiect2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/concatenare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/concatenare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/mutare_locatie.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/mutare_locatie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/operatii.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/ordonare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/ordonare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/pret_maxim.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pret_maxim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/sume_pret.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/sume_pret.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/test_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/test_operatii.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_operatii.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/consola.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/consola.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/consola2.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/consola2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_undo_si_redo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_undo_si_redo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +106,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_undo_si_redo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab-567-AdelaBura" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_undo_si_redo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test_undo_si_redo" />
         <item itemvalue="Python.consola" />
         <item itemvalue="Python.test_operatii" />
       </list>
@@ -139,7 +150,8 @@
       <workItem from="1637143512956" duration="80000" />
       <workItem from="1637143747738" duration="6745000" />
       <workItem from="1637150566337" duration="62000" />
-      <workItem from="1637151375762" duration="8747000" />
+      <workItem from="1637151375762" duration="16296000" />
+      <workItem from="1639574638354" duration="1291000" />
     </task>
     <servers />
   </component>
@@ -160,8 +172,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/lab_567_AdelaBura$main.coverage" NAME="main Coverage Results" MODIFIED="1636565954351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$test_undo_si_redo.coverage" NAME="test_undo_si_redo Coverage Results" MODIFIED="1639574703909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/main_py$test_operatii.coverage" NAME="test_operatii Coverage Results" MODIFIED="1637155643799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
-    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1637160405736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/main_py$consola.coverage" NAME="consola Coverage Results" MODIFIED="1637159774991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UserInterface" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1639574947058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$consola.coverage" NAME="consola Coverage Results" MODIFIED="1637171229260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UserInterface" />
   </component>
 </project>
